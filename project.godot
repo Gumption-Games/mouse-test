@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "DrawingPencil",
 "language": "GDScript",
 "path": "res://DrawingPencil.gd"
+}, {
+"base": "Node2D",
+"class": "GameWorld",
+"language": "GDScript",
+"path": "res://GameWorld.gd"
 } ]
 _global_script_class_icons={
 "Draggable": "",
 "DraggablePhysics": "",
-"DrawingPencil": ""
+"DrawingPencil": "",
+"GameWorld": ""
 }
 
 [application]
