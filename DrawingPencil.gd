@@ -1,8 +1,8 @@
 class_name DrawingPencil extends Line2D
 
-export var enable :bool = false
+export var enable : bool = false
 
-var dragging :bool = false
+var dragging : bool = false
 
 func _input(event):
 	if not enable:

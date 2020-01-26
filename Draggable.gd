@@ -1,9 +1,9 @@
 class_name Draggable extends Sprite
 
-export var enable :bool = false
+export var enable : bool = false
 
-var dragging = false
-var click_radius = 40  # Size of the sprite
+var dragging : bool = false
+var click_radius : int = 40  # Size of the sprite
 
 func _input(event):
 	if not enable:

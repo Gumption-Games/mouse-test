@@ -12,15 +12,21 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "Draggable",
 "language": "GDScript",
-"path": "res://Sprite.gd"
+"path": "res://Draggable.gd"
+}, {
+"base": "RigidBody2D",
+"class": "DraggablePhysics",
+"language": "GDScript",
+"path": "res://DraggablePhysics.gd"
 }, {
 "base": "Line2D",
 "class": "DrawingPencil",
 "language": "GDScript",
-"path": "res://Line2D.gd"
+"path": "res://DrawingPencil.gd"
 } ]
 _global_script_class_icons={
 "Draggable": "",
+"DraggablePhysics": "",
 "DrawingPencil": ""
 }
 
@@ -28,7 +34,7 @@ _global_script_class_icons={
 
 config/name="mouse-test"
 run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/icon.png"
 
 [rendering]
 
