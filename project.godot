@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Bowl",
+"language": "GDScript",
+"path": "res://stirring/Bowl.gd"
+}, {
 "base": "Sprite",
 "class": "Draggable",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://GameWorld.gd"
 } ]
 _global_script_class_icons={
+"Bowl": "",
 "Draggable": "",
 "DraggablePhysics": "",
 "DrawingPencil": "",

@@ -8,10 +8,10 @@
 [ext_resource path="res://DraggablePhysics.gd" type="Script" id=6]
 [ext_resource path="res://assets/yellow_square.png" type="Texture" id=7]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.5
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 32.0
 
 [node name="Main" type="Node"]
@@ -27,6 +27,7 @@ script = ExtResource( 3 )
 enable = true
 
 [node name="DrawingPencil" type="Line2D" parent="GameWorld"]
+texture_mode = 3080292
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -40,7 +41,7 @@ texture = ExtResource( 5 )
 "pickable",
 ]]
 position = Vector2( 822.783, 286.718 )
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 script = ExtResource( 6 )
 __meta__ = {
@@ -53,4 +54,4 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/DraggablePhysics"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
