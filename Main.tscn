@@ -1,20 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameWorld.gd" type="Script" id=1]
-[ext_resource path="res://Draggable.gd" type="Script" id=2]
-[ext_resource path="res://assets/blue_square.png" type="Texture" id=3]
+[ext_resource path="res://assets/blue_square.png" type="Texture" id=2]
+[ext_resource path="res://Draggable.gd" type="Script" id=3]
 [ext_resource path="res://DrawingPencil.gd" type="Script" id=4]
 [ext_resource path="res://assets/red_square.png" type="Texture" id=5]
 [ext_resource path="res://DraggablePhysics.gd" type="Script" id=6]
 [ext_resource path="res://assets/yellow_square.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
-
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.5
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 32.0
 
 [node name="Main" type="Node"]
@@ -22,20 +19,14 @@ radius = 32.0
 [node name="GameWorld" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
-[node name="Draggable" type="Area2D" parent="GameWorld"]
+[node name="Draggable" type="Sprite" parent="GameWorld"]
 position = Vector2( 193.574, 288.775 )
 scale = Vector2( 2, 2 )
-script = ExtResource( 2 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
 enable = true
 
-[node name="Sprite" type="Sprite" parent="GameWorld/Draggable"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/Draggable"]
-shape = SubResource( 1 )
-
 [node name="DrawingPencil" type="Line2D" parent="GameWorld"]
-texture_mode = 3080292
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -62,4 +53,4 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/DraggablePhysics"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
