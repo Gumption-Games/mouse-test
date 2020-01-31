@@ -8,17 +8,17 @@
 [ext_resource path="res://assets/yellow_square.png" type="Texture" id=6]
 [ext_resource path="res://DraggableObject.tscn" type="PackedScene" id=7]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.5
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 32.0
 
-[sub_resource type="StreamTexture" id=4]
+[sub_resource type="StreamTexture" id=3]
 flags = 4
 load_path = "res://.import/red_square.png-881c0a01c906fc3680333bb9b896b86e.stex"
 
-[sub_resource type="StreamTexture" id=5]
+[sub_resource type="StreamTexture" id=4]
 flags = 4
 load_path = "res://.import/blue_square.png-771ba9c0f571bad09ff2a9ed396e4ad9.stex"
 
@@ -51,7 +51,7 @@ texture = ExtResource( 4 )
 editor/display_folded = true
 visible = false
 position = Vector2( 719.585, 310.856 )
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 script = ExtResource( 5 )
 __meta__ = {
@@ -64,15 +64,15 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/DraggablePhysics"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="RedIngredient" parent="GameWorld" instance=ExtResource( 7 )]
 
 [node name="Sprite" type="Sprite" parent="GameWorld/RedIngredient"]
-texture = SubResource( 4 )
+texture = SubResource( 3 )
 
 [node name="BlueIngredient" parent="GameWorld" instance=ExtResource( 7 )]
 position = Vector2( 71.217, 91.2598 )
 
 [node name="Sprite" type="Sprite" parent="GameWorld/BlueIngredient"]
-texture = SubResource( 5 )
+texture = SubResource( 4 )
