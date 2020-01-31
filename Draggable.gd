@@ -1,4 +1,4 @@
-class_name Draggable extends Sprite
+class_name Draggable extends Area2D
 
 export var enable : bool = false
 
