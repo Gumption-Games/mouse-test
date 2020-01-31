@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameWorld.gd" type="Script" id=1]
-[ext_resource path="res://Draggable.gd" type="Script" id=2]
-[ext_resource path="res://assets/blue_square.png" type="Texture" id=3]
+[ext_resource path="res://assets/blue_square.png" type="Texture" id=2]
+[ext_resource path="res://Draggable.gd" type="Script" id=3]
 [ext_resource path="res://DrawingPencil.gd" type="Script" id=4]
 [ext_resource path="res://assets/red_square.png" type="Texture" id=5]
 [ext_resource path="res://DraggablePhysics.gd" type="Script" id=6]
@@ -20,13 +19,10 @@
 [ext_resource path="res://DraggableObject.tscn" type="PackedScene" id=7]
 >>>>>>> 442d5a90119f8ec74fabcf68558bb507acbd8eee
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
-
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.5
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 32.0
 
 [sub_resource type="StreamTexture" id=4]
@@ -43,10 +39,15 @@ load_path = "res://.import/blue_square.png-771ba9c0f571bad09ff2a9ed396e4ad9.stex
 script = ExtResource( 1 )
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [node name="Draggable" type="Area2D" parent="GameWorld"]
+=======
+[node name="Draggable" type="Sprite" parent="GameWorld"]
+>>>>>>> f74e35f96c4c8c3e5cc6f0fc61d20b4232c8cb64
 position = Vector2( 193.574, 288.775 )
 scale = Vector2( 2, 2 )
-script = ExtResource( 2 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
 enable = true
 =======
 [node name="Draggable" parent="GameWorld" instance=ExtResource( 2 )]
@@ -55,15 +56,12 @@ position = Vector2( 609.126, 198.475 )
 enable = false
 >>>>>>> 442d5a90119f8ec74fabcf68558bb507acbd8eee
 
-[node name="Sprite" type="Sprite" parent="GameWorld/Draggable"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/Draggable"]
-shape = SubResource( 1 )
-
 [node name="DrawingPencil" type="Line2D" parent="GameWorld"]
 <<<<<<< HEAD
+<<<<<<< HEAD
 texture_mode = 3080292
+=======
+>>>>>>> f74e35f96c4c8c3e5cc6f0fc61d20b4232c8cb64
 script = ExtResource( 4 )
 =======
 visible = false
@@ -98,6 +96,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/DraggablePhysics"]
+<<<<<<< HEAD
 shape = SubResource( 3 )
 <<<<<<< HEAD
 =======
@@ -113,3 +112,6 @@ position = Vector2( 71.217, 91.2598 )
 [node name="Sprite" type="Sprite" parent="GameWorld/BlueIngredient"]
 texture = SubResource( 5 )
 >>>>>>> 442d5a90119f8ec74fabcf68558bb507acbd8eee
+=======
+shape = SubResource( 1 )
+>>>>>>> f74e35f96c4c8c3e5cc6f0fc61d20b4232c8cb64
