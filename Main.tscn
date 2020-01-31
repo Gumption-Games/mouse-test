@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-[gd_scene load_steps=11 format=2]
-
-[ext_resource path="res://GameWorld.gd" type="Script" id=1]
-[ext_resource path="res://Draggable.gd" type="Script" id=2]
-[ext_resource path="res://assets/blue_square.png" type="Texture" id=3]
-[ext_resource path="res://DrawingPencil.gd" type="Script" id=4]
-[ext_resource path="res://assets/red_square.png" type="Texture" id=5]
-[ext_resource path="res://DraggablePhysics.gd" type="Script" id=6]
-[ext_resource path="res://assets/yellow_square.png" type="Texture" id=7]
-=======
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GameWorld.gd" type="Script" id=1]
@@ -18,7 +7,6 @@
 [ext_resource path="res://DraggablePhysics.gd" type="Script" id=5]
 [ext_resource path="res://assets/yellow_square.png" type="Texture" id=6]
 [ext_resource path="res://DraggableObject.tscn" type="PackedScene" id=7]
->>>>>>> 442d5a90119f8ec74fabcf68558bb507acbd8eee
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -42,18 +30,10 @@ load_path = "res://.import/blue_square.png-771ba9c0f571bad09ff2a9ed396e4ad9.stex
 [node name="GameWorld" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
-<<<<<<< HEAD
-[node name="Draggable" type="Area2D" parent="GameWorld"]
-position = Vector2( 193.574, 288.775 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 2 )
-enable = true
-=======
 [node name="Draggable" parent="GameWorld" instance=ExtResource( 2 )]
 visible = false
 position = Vector2( 609.126, 198.475 )
 enable = false
->>>>>>> 442d5a90119f8ec74fabcf68558bb507acbd8eee
 
 [node name="Sprite" type="Sprite" parent="GameWorld/Draggable"]
 texture = ExtResource( 3 )
@@ -62,15 +42,10 @@ texture = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="DrawingPencil" type="Line2D" parent="GameWorld"]
-<<<<<<< HEAD
-texture_mode = 3080292
-script = ExtResource( 4 )
-=======
 visible = false
 position = Vector2( 341.663, 257.454 )
 texture_mode = 0
 script = ExtResource( 3 )
->>>>>>> 442d5a90119f8ec74fabcf68558bb507acbd8eee
 __meta__ = {
 "_edit_group_": true
 }
@@ -99,8 +74,6 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/DraggablePhysics"]
 shape = SubResource( 3 )
-<<<<<<< HEAD
-=======
 
 [node name="RedIngredient" parent="GameWorld" instance=ExtResource( 7 )]
 
@@ -112,4 +85,3 @@ position = Vector2( 71.217, 91.2598 )
 
 [node name="Sprite" type="Sprite" parent="GameWorld/BlueIngredient"]
 texture = SubResource( 5 )
->>>>>>> 442d5a90119f8ec74fabcf68558bb507acbd8eee
