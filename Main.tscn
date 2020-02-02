@@ -12,7 +12,7 @@
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.5
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 32.0
 
 [node name="Main" type="Node"]
