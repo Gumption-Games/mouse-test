@@ -54,17 +54,21 @@ func _process(delta):
 	update()
 
 func _input(event):
+	if finished:
+		return
+	
 	if event is InputEventMouseButton:
-		if event.pressed:
-			# Cut!
-			var hits = hitarea.get_overlapping_areas()
-			if hits: # if we got a cut
-				hits[0].cut = true
-				print("Cut!")
-				label.text = "nice !"
-			else:
-				print("Nope!")
-				label.text = "miss !"
+		if event.button_index==BUTTON_WHEEL_DOWN:
+			if event.factor > 0.7:
+				# Cut!
+				var hits = hitarea.get_overlapping_areas()
+				if hits: # if we got a cut
+					hits[0].cut = true
+					print("Cut!")
+					label.text = "nice !"
+				else:
+					print("Nope!")
+					label.text = "miss !"
 		# Here's something cool:
 		# InputEventMouseButton has a property called "factor"
 		# which corresponds to how *much* the button is held.

@@ -54,6 +54,10 @@ config/name="mouse-test"
 run/main_scene="res://Main.tscn"
 config/icon="res://assets/icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "SyndiBox" )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
