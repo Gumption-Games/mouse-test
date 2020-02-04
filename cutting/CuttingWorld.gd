@@ -2,6 +2,8 @@ extends Node2D
 
 var CutPointScene := load("res://cutting/CutPoint.tscn")
 
+onready var label := $Label
+
 onready var ingredient_pos : Vector2 = $Ingredient.position
 onready var ingredient_size : Vector2 = $Ingredient.get_rect().size
 onready var topleft := Vector2(
@@ -10,7 +12,6 @@ onready var topleft := Vector2(
 )
 onready var hitarea := $HitArea
 onready var hitshape := $HitArea/CollisionShape2D
-
 
 export var hit_area_width := 25
 export var hit_area_speed : float = 2.0
@@ -29,6 +30,9 @@ func _ready():
 	var shape = RectangleShape2D.new()
 	shape.extents = Vector2(hit_area_width, ingredient_size.y/2)
 	hitshape.set_shape(shape)
+	
+	# Initialize the Label
+	label.text = "cut !"
 
 func _process(delta):
 	if finished:
@@ -40,6 +44,8 @@ func _process(delta):
 			if child.cut==false:
 				finished = false
 				break
+	if finished:
+		label.text = "well done."
 	
 	# Move the HitArea on a sine wave
 	elapsed += hit_area_speed * delta
@@ -54,7 +60,11 @@ func _input(event):
 			var hits = hitarea.get_overlapping_areas()
 			if hits: # if we got a cut
 				hits[0].cut = true
-			
+				print("Cut!")
+				label.text = "nice !"
+			else:
+				print("Nope!")
+				label.text = "miss !"
 		# Here's something cool:
 		# InputEventMouseButton has a property called "factor"
 		# which corresponds to how *much* the button is held.
