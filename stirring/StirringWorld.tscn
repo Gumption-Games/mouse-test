@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://stirring/Bowl.gd" type="Script" id=1]
-[ext_resource path="res://assets/circle.png" type="Texture" id=2]
-[ext_resource path="res://stirring/Top.gd" type="Script" id=3]
-[ext_resource path="res://stirring/Right.gd" type="Script" id=4]
-[ext_resource path="res://stirring/Bottom.gd" type="Script" id=5]
-[ext_resource path="res://stirring/Left.gd" type="Script" id=6]
+[ext_resource path="res://assets/circle-1.png.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 13.0
@@ -16,36 +12,29 @@ radius = 13.0
 position = Vector2( 512, 300 )
 scale = Vector2( 8, 8 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Bowl"]
 texture = ExtResource( 2 )
 
 [node name="Top" type="Area2D" parent="Bowl"]
-script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl/Top"]
 position = Vector2( 0, -19 )
 shape = SubResource( 1 )
 
 [node name="Right" type="Area2D" parent="Bowl"]
-script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl/Right"]
 position = Vector2( 19, 0 )
 shape = SubResource( 1 )
 
 [node name="Bottom" type="Area2D" parent="Bowl"]
-script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl/Bottom"]
 position = Vector2( 0, 19 )
 shape = SubResource( 1 )
 
 [node name="Left" type="Area2D" parent="Bowl"]
-script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl/Left"]
 position = Vector2( -19, 0 )
@@ -53,4 +42,4 @@ shape = SubResource( 1 )
 [connection signal="mouse_entered" from="Bowl/Top" to="Bowl" method="_on_Top_mouse_entered"]
 [connection signal="mouse_entered" from="Bowl/Right" to="Bowl" method="_on_Right_mouse_entered"]
 [connection signal="mouse_entered" from="Bowl/Bottom" to="Bowl" method="_on_Bottom_mouse_entered"]
-[connection signal="mouse_entered" from="Bowl/Left" to="Bowl" method="_on_Bottom_mouse_entered"]
+[connection signal="mouse_entered" from="Bowl/Left" to="Bowl" method="_on_Left_mouse_entered"]
