@@ -1,4 +1,4 @@
-extends Node2D
+class_name CuttingSkillCheck extends Node2D
 
 var CutPointScene := load("res://cutting/CutPoint.tscn")
 
@@ -19,6 +19,7 @@ var elapsed : float = 0.0
 var finished := false
 
 func _ready():
+	
 	# Create the Cut Points
 	for i in range(topleft.x+ingredient_size.x/4, topleft.x+ingredient_size.x, ingredient_size.x/4):
 		var cutpoint = CutPointScene.instance()
@@ -58,21 +59,26 @@ func _input(event):
 		return
 	
 	if event is InputEventMouseButton:
-		if event.button_index==BUTTON_WHEEL_DOWN:
-			if event.factor > 0.7:
-				# Cut!
-				var hits = hitarea.get_overlapping_areas()
-				if hits: # if we got a cut
-					hits[0].cut = true
-					print("Cut!")
-					label.text = "nice !"
-				else:
-					print("Nope!")
-					label.text = "miss !"
 		# Here's something cool:
 		# InputEventMouseButton has a property called "factor"
 		# which corresponds to how *much* the button is held.
 		# We could use this to cut using the scroll wheel.
+		#if event.button_index==BUTTON_WHEEL_DOWN:
+		#	if event.factor > 0.7:
+		
+		if event.button_index==BUTTON_LEFT \
+		or event.button_index==BUTTON_RIGHT \
+		or event.button_index==BUTTON_MIDDLE:
+			# Cut!
+			var hits = hitarea.get_overlapping_areas()
+			if hits: # if we got a cut
+				hits[0].cut = true
+				print("Cut!")
+				label.text = "nice !"
+			else:
+				print("Nope!")
+				label.text = "miss !"
+		
 
 func _draw():
 	# Drawing simple shapes using CanvasItem methods
