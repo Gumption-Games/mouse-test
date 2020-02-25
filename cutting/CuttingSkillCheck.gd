@@ -2,9 +2,13 @@ class_name CuttingSkillCheck extends Node2D
 
 var CutPointScene := load("res://cutting/CutPoint.tscn")
 
+# Play with these values to change the game
 export var hit_area_width := 40
 export var hit_area_speed : float = 1.0
 export var amplitude_factor : float = 1.5
+export var num_cuts : int = 3
+export var cutpoint_width : float = 4.0
+
 var sine_x : float = -PI/2.0 # see hitarea.pos formula in _process()
 
 onready var label := $Label
@@ -23,10 +27,13 @@ func _ready():
 	# TODO: Set the texture of $Ingredient to whatever we are cutting
 	
 	# Create the Cut Points
-	for i in range(top_left.x+ingredient_size.x/4, top_left.x+ingredient_size.x, ingredient_size.x/4):
+	for i in range(top_left.x+ingredient_size.x/(num_cuts+1), top_left.x+ingredient_size.x, ingredient_size.x/(num_cuts+1)):
 		var cutpoint = CutPointScene.instance()
 		add_child(cutpoint)
 		cutpoint.position = Vector2(i, ingredient_pos.y)
+		cutpoint.width = cutpoint_width
+		cutpoint.height = ingredient_size.y/2
+		cutpoint.shape.set_extents(Vector2(cutpoint.width, cutpoint.height))
 	
 	# Initialize the HitArea and its collision shape
 	hitarea.position = Vector2(peak.x, ingredient_pos.y)
@@ -84,7 +91,6 @@ func _input(event):
 			else:
 				print("Nope!")
 				label.text = "miss"
-		
 
 func _draw():
 	# Drawing simple shapes using CanvasItem methods
